@@ -3,8 +3,6 @@ const app = require('../src/app')
 const User = require('../src/models/user')
 
 const { userOneId, userOne,  setupDatabase} = require('../tests/fixtures/db.js')
-// console.log(userOneId, userOne,  setupDatabase)
-
 
 
 beforeEach(async () =>{
@@ -102,7 +100,6 @@ test('Should update account when authenticated', async() => {
     )
        .expect(200)
         const user = await User.findById(userOneId)
-        
         expect(user.name).toEqual('paul')
         expect(user.age).toEqual(37)
 })
